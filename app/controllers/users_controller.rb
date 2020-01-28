@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   def create
-    p User.new(user_params)
     if User.create(user_params)
       p params
       render json: 'Success'
@@ -13,6 +12,6 @@ class UsersController < ApplicationController
   end
 
   private def user_params
-    params.require(:user).permit(:user, :password)
+    params.require(:user).permit(:username, :password)
   end
 end
