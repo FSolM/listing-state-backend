@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   scope '/api' do
-    post 'user/signin', to: 'users#create'
+    post 'user/signup', to: 'users#create'
     post 'user/login', to: 'users#search'
     get 'user/delete/:id', to: 'users#destroy'
 
