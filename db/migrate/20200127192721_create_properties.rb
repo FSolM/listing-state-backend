@@ -9,6 +9,7 @@ class CreateProperties < ActiveRecord::Migration[6.0]
       t.integer :bedrooms
       t.integer :bathrooms
       t.decimal :size
+      t.string :owner
 
       t.timestamps
     end
