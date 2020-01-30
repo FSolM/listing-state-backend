@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2020_01_27_192721) do
     t.integer "bedrooms"
     t.integer "bathrooms"
     t.decimal "size"
+    t.string "owner"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
