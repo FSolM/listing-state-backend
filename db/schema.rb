@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2020_01_27_192721) do
     t.decimal "price"
     t.string "description"
     t.string "location"
-    t.string "type"
+    t.string "property_type"
     t.integer "bedrooms"
     t.integer "bathrooms"
     t.decimal "size"
