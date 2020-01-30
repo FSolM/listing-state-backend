@@ -1,5 +1,5 @@
 class Property < ApplicationRecord
-  has_many_attached :slideshow
+  has_many_attached :images
 
   validates :name, presence: true
   validates :price, presence: true
