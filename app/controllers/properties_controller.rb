@@ -1,6 +1,6 @@
 class PropertiesController < ApplicationController
   def index
-    render json: Property.all
+    render json: { status: 'Success', code: 101, message: 'Data retrieved', payload: { data: Property.all } }
   end
 
   def show
