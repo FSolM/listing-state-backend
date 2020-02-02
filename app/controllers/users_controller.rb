@@ -1,5 +1,3 @@
-require 'bcrypt'
-
 class UsersController < ApplicationController
   def create  
     if User.where(username: params[:username]).exists?
@@ -20,9 +18,6 @@ class UsersController < ApplicationController
     else
       render json: { status: 'Error', code: 3001, message: 'User not found' }
     end
-  end
-
-  def destroy
   end
 
   private def user_params
