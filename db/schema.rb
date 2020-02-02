@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2020_01_27_192721) do
     t.string "name"
     t.decimal "price"
     t.string "description"
+    t.string "image"
     t.string "location"
     t.string "property_type"
     t.integer "bedrooms"

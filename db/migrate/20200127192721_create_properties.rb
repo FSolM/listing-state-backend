@@ -2,13 +2,14 @@ class CreateProperties < ActiveRecord::Migration[6.0]
   def change
     create_table :properties do |t|
       t.string :name
-      t.decimal :price
+      t.float :price
       t.string :description
+      t.string :image
       t.string :location
       t.string :property_type
       t.integer :bedrooms
       t.integer :bathrooms
-      t.decimal :size
+      t.float :size
       t.string :owner
 
       t.timestamps
