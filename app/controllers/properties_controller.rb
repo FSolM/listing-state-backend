@@ -6,7 +6,7 @@ class PropertiesController < ApplicationController
   def show
   end
 
-  def create
+  def create    
     if Property.create(property_params)
       render json: { status: 'Success', code: 101, message: 'Property created', payload: { id: Property.last.id } }
     else
@@ -18,6 +18,6 @@ class PropertiesController < ApplicationController
   end
 
   private def property_params
-    params.require(:property).permit(:name, :price, :description, :location, :property_type, :bedrooms, :bathrooms, :size, :owner)
+    params.permit(:name, :price, :description, :image, :location, :property_type, :bedrooms, :bathrooms, :size, :owner)
   end
 end
