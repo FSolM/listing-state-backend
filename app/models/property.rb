@@ -1,4 +1,6 @@
 class Property < ApplicationRecord
+  mount_uploader :image, ImagesUploader
+
   validates :name, presence: true
   validates :price, presence: true
   validates :location, presence: true
