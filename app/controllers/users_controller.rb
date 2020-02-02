@@ -1,5 +1,3 @@
-require 'bcrypt'
-
 class UsersController < ApplicationController
   def create  
     if User.where(username: params[:username]).exists?
