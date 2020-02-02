@@ -16,3 +16,5 @@
 /config/master.key
 
 /Gemfile.lock
+
+/public/uploads/*
