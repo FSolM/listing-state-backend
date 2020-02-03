@@ -6,6 +6,6 @@ Rails.application.routes.draw do
     get 'properties', to: 'properties#index'
     get 'property/:id', to: 'properties#show'
     post 'property/create', to: 'properties#create'
-    delete 'property/delete', to: 'properties#destroy'
+    delete 'property/:id', to: 'properties#destroy'
   end
 end
