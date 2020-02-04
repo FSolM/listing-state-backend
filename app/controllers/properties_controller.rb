@@ -4,6 +4,12 @@ class PropertiesController < ApplicationController
   end
 
   def show
+    begin
+      property = Property.find(params[:id])
+      render json: { status: 'Success', code: 101, message: 'Property data found', payload: { data: property } }
+    rescue
+      render json: { status: 'Error', code: 3101, message: 'Property not found' }
+    end
   end
 
   def create    
@@ -15,6 +21,11 @@ class PropertiesController < ApplicationController
   end
 
   def destroy
+    if Property.find(params[:id]).destroy
+      render json: { status: 'Success', code: 101, message: 'Property deleted' }
+    else
+      render json: { status: 'Error', code: 3102, message: "Porperty couldn't be destroyed" }
+    end
   end
 
   private def property_params
