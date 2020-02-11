@@ -10,9 +10,6 @@ AllCops:
     - 'db/schema.rb'
     - 'config/routes.rb'
 
-Metrics/LineLength:
-  Max: 155
-
 Documentation:
   Enabled: false
 
