@@ -31,6 +31,10 @@ Style/DefWithParentheses:
   Enabled: false
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
+Style/IfInsideElse:
+  AllowIfModifier: true
+Style/RescueStandardError:
+  EnforcedStyle: implicit
 
 Layout/HashAlignment:
   EnforcedColonStyle: key
