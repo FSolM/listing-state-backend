@@ -4,15 +4,14 @@ class PropertiesController < ApplicationController
   end
 
   def show
-    begin
-      property = Property.find(params[:id])
-      render json: { status: 'Success', code: 101, message: 'Property data found', payload: { data: property } }
-    rescue
+    property = Property.find(params[:id])
+    render json: { status: 'Success', code: 101, message: 'Property data found', payload: { data: property } }
+    rescue SearchError
       render json: { status: 'Error', code: 3101, message: 'Property not found' }
     end
   end
 
-  def create    
+  def create
     if Property.create(property_params)
       render json: { status: 'Success', code: 101, message: 'Property created', payload: { id: Property.last.id } }
     else
@@ -28,7 +27,9 @@ class PropertiesController < ApplicationController
     end
   end
 
-  private def property_params
+  private
+
+  def property_params
     params.permit(:name, :price, :description, :image, :location, :property_type, :bedrooms, :bathrooms, :size, :owner)
   end
 end

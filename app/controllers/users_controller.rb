@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  def create  
+  def create
     if User.where(username: params[:username]).exists?
       render json: { status: 'Error', code: 3004, message: 'User already exists' }
     else
@@ -20,7 +20,9 @@ class UsersController < ApplicationController
     end
   end
 
-  private def user_params
+  private
+
+  def user_params
     params.require(:user).permit(:username, :password)
   end
 end
