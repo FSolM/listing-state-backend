@@ -10,18 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_27_192721) do
+ActiveRecord::Schema.define(version: 2020_02_04_014545) do
+
+  create_table "favourites", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "properties", force: :cascade do |t|
     t.string "name"
-    t.decimal "price"
+    t.float "price"
     t.string "description"
     t.string "image"
     t.string "location"
     t.string "property_type"
     t.integer "bedrooms"
     t.integer "bathrooms"
-    t.decimal "size"
+    t.float "size"
     t.string "owner"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
