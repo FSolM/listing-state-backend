@@ -3,7 +3,8 @@ CarrierWave.configure do |config|
     provider: 'AWS',
     aws_access_key_id: '',
     aws_secret_access_key: '',
+    region: 'us-west-1'
   }
-  config.fog_directory = 'listing-state-imgstorage'
+  config.fog_directory = ''
   config.fog_public = false
 end
