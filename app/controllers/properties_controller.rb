@@ -4,10 +4,10 @@ class PropertiesController < ApplicationController
   end
 
   def show
-      property = Property.find(params[:id])
-      render json: { status: 'Success', code: 101, message: 'Property data found', payload: { data: property } }
-    rescue
-      render json: { status: 'Error', code: 3101, message: 'Property not found' }
+    property = Property.find(params[:id])
+    render json: { status: 'Success', code: 101, message: 'Property data found', payload: { data: property } }
+  rescue
+    render json: { status: 'Error', code: 3101, message: 'Property not found' }
   end
 
   def create
