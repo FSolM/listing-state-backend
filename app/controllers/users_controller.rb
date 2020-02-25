@@ -2,12 +2,10 @@ class UsersController < ApplicationController
   def create
     if User.where(username: params[:username]).exists?
       render json: { status: 'Error', code: 3004, message: 'User already exists' }
+    elsif User.create(user_params)
+      render json: { status: 'Success', code: 101, message: 'User created' }
     else
-      if User.create(user_params)
-        render json: { status: 'Success', code: 101, message: 'User created' }
-      else
-        render json: { status: 'Error', code: 3003, message: 'Error during the signup' }
-      end
+      render json: { status: 'Error', code: 3003, message: 'Error during the signup' }
     end
   end
 

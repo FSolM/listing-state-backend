@@ -4,7 +4,6 @@ class PropertiesController < ApplicationController
   end
 
   def show
-    begin
       property = Property.find(params[:id])
       render json: { status: 'Success', code: 101, message: 'Property data found', payload: { data: property } }
     rescue
