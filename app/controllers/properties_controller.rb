@@ -8,7 +8,6 @@ class PropertiesController < ApplicationController
       render json: { status: 'Success', code: 101, message: 'Property data found', payload: { data: property } }
     rescue
       render json: { status: 'Error', code: 3101, message: 'Property not found' }
-    end
   end
 
   def create
